@@ -15,37 +15,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hJX-hd-aAF">
+                                <rect key="frame" x="20" y="74" width="54" height="30"/>
+                                <state key="normal" title="Camera"/>
+                                <connections>
+                                    <action selector="pickAnImageFromCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eTc-TM-j0f"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yG1-4w-qso">
+                                <rect key="frame" x="36" y="842" width="48" height="30"/>
+                                <state key="normal" title="Gallery"/>
+                                <connections>
+                                    <action selector="pickAnImageFromAlbum:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Q2N-2i-jHp"/>
+                                </connections>
+                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vqu-xo-h0Z">
-                                <rect key="frame" x="87" y="318" width="240" height="400"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="400" id="20K-kA-TV3"/>
-                                </constraints>
+                                <rect key="frame" x="87" y="178" width="240" height="540"/>
                             </imageView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fuU-71-h9m">
-                                <rect key="frame" x="0.0" y="718" width="414" height="178"/>
-                                <items>
-                                    <barButtonItem title="Pick" id="N5h-dt-Jz5">
-                                        <connections>
-                                            <action selector="pickAnImage:" destination="BYZ-38-t0r" id="EgF-FI-dM8"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="fuU-71-h9m" secondAttribute="bottom" symbolic="YES" id="74e-sd-pCe"/>
-                            <constraint firstItem="fuU-71-h9m" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="FLp-Sr-QOj"/>
-                            <constraint firstItem="vqu-xo-h0Z" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="274" id="I5A-bw-yh6"/>
-                            <constraint firstItem="fuU-71-h9m" firstAttribute="centerX" secondItem="vqu-xo-h0Z" secondAttribute="centerX" id="KgS-ec-MNo"/>
-                            <constraint firstItem="fuU-71-h9m" firstAttribute="top" secondItem="vqu-xo-h0Z" secondAttribute="bottom" symbolic="YES" id="eNH-mo-JxJ"/>
+                            <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="yG1-4w-qso" secondAttribute="bottom" constant="30" id="0PF-7Z-APv"/>
+                            <constraint firstItem="vqu-xo-h0Z" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="134" id="4GO-jH-JQh"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hJX-hd-aAF" secondAttribute="trailing" constant="20" symbolic="YES" id="9Nx-Hu-mfZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="vqu-xo-h0Z" secondAttribute="bottom" constant="144" id="Aqb-bV-FUF"/>
+                            <constraint firstItem="hJX-hd-aAF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="VFI-7H-Kiw"/>
+                            <constraint firstItem="hJX-hd-aAF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="WpT-oC-t14"/>
+                            <constraint firstItem="yG1-4w-qso" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="37" id="dtq-CP-gYk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="yG1-4w-qso" secondAttribute="trailing" symbolic="YES" id="i9B-4X-NY0"/>
                             <constraint firstItem="vqu-xo-h0Z" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="iIX-Pz-jEf"/>
-                            <constraint firstItem="fuU-71-h9m" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="prV-n8-TZ0"/>
-                            <constraint firstAttribute="trailing" secondItem="fuU-71-h9m" secondAttribute="trailing" id="y5i-od-hnj"/>
+                            <constraint firstItem="vqu-xo-h0Z" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tKl-pi-BXY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="cameraButton" destination="hJX-hd-aAF" id="O8L-Vb-KVL"/>
                         <outlet property="imageView" destination="vqu-xo-h0Z" id="iQ9-on-El1"/>
                     </connections>
                 </viewController>
