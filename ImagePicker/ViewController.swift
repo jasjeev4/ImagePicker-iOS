@@ -16,10 +16,20 @@ UINavigationControllerDelegate{
     @IBOutlet weak var topText: UITextField!
     @IBOutlet weak var bottomText: UITextField!
     
+    let memeTextAttributes: [NSAttributedString.Key: Any] = [
+        NSAttributedString.Key.strokeColor: UIColor.black,
+        NSAttributedString.Key.foregroundColor: UIColor.white /* TODO: fill in appropriate UIColor */,
+        NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
+        NSAttributedString.Key.strokeWidth:  2.5/* TODO: fill in appropriate Float */
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         imageView.contentMode = UIView.ContentMode.scaleAspectFill
+        
+        topText.defaultTextAttributes = memeTextAttributes
+        bottomText.defaultTextAttributes = memeTextAttributes
         
         // Do any additional setup after loading the view.
     }
@@ -65,5 +75,7 @@ UINavigationControllerDelegate{
     @IBAction func onBottomEditBegin(_ sender: Any) {
         bottomText.text = ""
     }
+    
+    
 }
 
