@@ -13,10 +13,14 @@ UINavigationControllerDelegate{
     
     @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var topText: UITextField!
+    @IBOutlet weak var bottomText: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
+        imageView.contentMode = UIView.ContentMode.scaleAspectFill
+        
         // Do any additional setup after loading the view.
     }
 
@@ -53,5 +57,13 @@ UINavigationControllerDelegate{
         present(imagePicker, animated: true, completion: nil)
     }
     
+    
+    @IBAction func onTopEditBegin(_ sender: Any) {
+        topText.text = ""
+    }
+    
+    @IBAction func onBottomEditBegin(_ sender: Any) {
+        bottomText.text = ""
+    }
 }
 

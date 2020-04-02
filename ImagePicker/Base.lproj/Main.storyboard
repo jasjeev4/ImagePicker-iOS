@@ -15,6 +15,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vqu-xo-h0Z">
+                                <rect key="frame" x="87" y="178" width="240" height="540"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hJX-hd-aAF">
                                 <rect key="frame" x="20" y="74" width="54" height="30"/>
                                 <state key="normal" title="Camera"/>
@@ -22,35 +25,55 @@
                                     <action selector="pickAnImageFromCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eTc-TM-j0f"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yG1-4w-qso">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yG1-4w-qso">
                                 <rect key="frame" x="36" y="842" width="48" height="30"/>
                                 <state key="normal" title="Gallery"/>
                                 <connections>
                                     <action selector="pickAnImageFromAlbum:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Q2N-2i-jHp"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vqu-xo-h0Z">
-                                <rect key="frame" x="87" y="178" width="240" height="540"/>
-                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GI9-lc-Z8a">
+                                <rect key="frame" x="179" y="228" width="56" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="onTopEditBegin:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="vON-Rj-U9K"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iZO-Tc-Uak">
+                                <rect key="frame" x="163" y="654" width="88" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="onBottomEditBegin:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="CaD-sX-x91"/>
+                                    <action selector="onButtomEdit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="N9W-5j-cSz"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="yG1-4w-qso" secondAttribute="bottom" constant="30" id="0PF-7Z-APv"/>
+                            <constraint firstItem="iZO-Tc-Uak" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0Ml-nW-ZTy"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="yG1-4w-qso" secondAttribute="bottom" constant="30" id="0PF-7Z-APv"/>
                             <constraint firstItem="vqu-xo-h0Z" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="134" id="4GO-jH-JQh"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hJX-hd-aAF" secondAttribute="trailing" constant="20" symbolic="YES" id="9Nx-Hu-mfZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="vqu-xo-h0Z" secondAttribute="bottom" constant="144" id="Aqb-bV-FUF"/>
+                            <constraint firstItem="GI9-lc-Z8a" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Mgv-m1-f8M"/>
+                            <constraint firstItem="GI9-lc-Z8a" firstAttribute="top" secondItem="vqu-xo-h0Z" secondAttribute="top" constant="50" id="Mq7-zK-tV9"/>
                             <constraint firstItem="hJX-hd-aAF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="VFI-7H-Kiw"/>
                             <constraint firstItem="hJX-hd-aAF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="WpT-oC-t14"/>
                             <constraint firstItem="yG1-4w-qso" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="37" id="dtq-CP-gYk"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="yG1-4w-qso" secondAttribute="trailing" symbolic="YES" id="i9B-4X-NY0"/>
                             <constraint firstItem="vqu-xo-h0Z" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="iIX-Pz-jEf"/>
+                            <constraint firstItem="iZO-Tc-Uak" firstAttribute="bottom" secondItem="vqu-xo-h0Z" secondAttribute="bottom" constant="-30" id="t9y-pd-DBr"/>
                             <constraint firstItem="vqu-xo-h0Z" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tKl-pi-BXY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="bottomText" destination="iZO-Tc-Uak" id="b64-kc-kLw"/>
                         <outlet property="cameraButton" destination="hJX-hd-aAF" id="O8L-Vb-KVL"/>
                         <outlet property="imageView" destination="vqu-xo-h0Z" id="iQ9-on-El1"/>
+                        <outlet property="topText" destination="GI9-lc-Z8a" id="A4F-jb-bg2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
