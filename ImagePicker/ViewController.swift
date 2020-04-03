@@ -155,8 +155,25 @@ UINavigationControllerDelegate, UITextFieldDelegate{
         let memedImage = generateMemedImage()
         let items = [memedImage]
         let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
-        present(ac, animated: true)
-
+        present(ac, animated: true, completion: nil)
+        
+        
+        // With assistance from: https://www.swiftdevcenter.com/uiactivityviewcontroller-tutorial-by-example/
+        
+        ac.completionWithItemsHandler = { (activityType: UIActivity.ActivityType?, completed:
+        Bool, arrayReturnedItems: [Any]?, error: Error?) in
+            if completed {
+                print("share completed")
+                self.save()
+                self.dismiss(animated: true, completion: nil)
+                return
+            } else {
+                print("cancel")
+            }
+            if let shareError = error {
+                print("error while sharing: \(shareError.localizedDescription)")
+            }
+        }
     }
     
 }

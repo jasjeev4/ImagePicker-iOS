@@ -18,8 +18,6 @@
 	<string>1.0</string>
 	<key>NSCameraUsageDescription</key>
 	<string>To be able to pick pictures for memes</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>To be able to pick pictures for memes</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 </dict>
