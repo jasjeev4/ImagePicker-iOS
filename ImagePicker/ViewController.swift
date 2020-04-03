@@ -72,6 +72,7 @@ UINavigationControllerDelegate, UITextFieldDelegate{
             imageView.image = image
         }
         print("Succesfully picked image")
+        dismiss(animated: true, completion: nil)
         
     }
     
