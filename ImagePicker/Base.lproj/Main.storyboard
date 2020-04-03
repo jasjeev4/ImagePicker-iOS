@@ -50,9 +50,9 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="SgR-oJ-KDp"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="41m-jb-rmt">
-                                <rect key="frame" x="321" y="74" width="40" height="30"/>
-                                <state key="normal" title="Share"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="41m-jb-rmt">
+                                <rect key="frame" x="321" y="82" width="40" height="22"/>
+                                <state key="normal" image="square.and.arrow.up" catalog="system"/>
                                 <connections>
                                     <action selector="shareMeme:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O1F-b2-3W9"/>
                                 </connections>
@@ -93,4 +93,7 @@
             <point key="canvasLocation" x="137.68115942028987" y="116.51785714285714"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="square.and.arrow.up" catalog="system" width="56" height="64"/>
+    </resources>
 </document>

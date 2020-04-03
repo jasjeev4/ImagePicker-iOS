@@ -24,6 +24,7 @@ UINavigationControllerDelegate, UITextFieldDelegate{
         var memedImage: UIImage
     }
     
+    // Set meme attributes
     let memeTextAttributes: [NSAttributedString.Key: Any] = [
         NSAttributedString.Key.strokeColor: UIColor.black,
         NSAttributedString.Key.foregroundColor: UIColor.white /* TODO: fill in appropriate UIColor */,
@@ -33,10 +34,14 @@ UINavigationControllerDelegate, UITextFieldDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Set button states
         shareButton.isEnabled = false
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         imageView.contentMode = UIView.ContentMode.scaleAspectFill
         
+        
+        // Set attributes for textfields
         topText.defaultTextAttributes = memeTextAttributes
         bottomText.defaultTextAttributes = memeTextAttributes
         
@@ -80,6 +85,8 @@ UINavigationControllerDelegate, UITextFieldDelegate{
         
     }
     
+    // MARK: Image Pickers
+    
     @IBAction func pickAnImageFromCamera(_ sender: Any) {
 
         let imagePicker = UIImagePickerController()
@@ -115,7 +122,10 @@ UINavigationControllerDelegate, UITextFieldDelegate{
     }
     
     func subscripbeToKeyboardNotifications() {
+        // On Keyboard show
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
+        // On keyboard hide
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
