@@ -150,5 +150,14 @@ UINavigationControllerDelegate, UITextFieldDelegate{
 
         return memedImage
     }
+    
+    @IBAction func shareMeme(_ sender: Any) {
+        let memedImage = generateMemedImage()
+        let items = [memedImage]
+        let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
+        present(ac, animated: true)
+
+    }
+    
 }
 
