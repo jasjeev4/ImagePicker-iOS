@@ -15,6 +15,7 @@ UINavigationControllerDelegate, UITextFieldDelegate{
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var topText: UITextField!
     @IBOutlet weak var bottomText: UITextField!
+    @IBOutlet weak var shareButton: UIButton!
     
     struct Meme {
         var topText: String
@@ -32,6 +33,7 @@ UINavigationControllerDelegate, UITextFieldDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        shareButton.isEnabled = false
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         imageView.contentMode = UIView.ContentMode.scaleAspectFill
         
@@ -72,6 +74,8 @@ UINavigationControllerDelegate, UITextFieldDelegate{
             imageView.image = image
         }
         print("Succesfully picked image")
+        
+        shareButton.isEnabled = true
         dismiss(animated: true, completion: nil)
         
     }

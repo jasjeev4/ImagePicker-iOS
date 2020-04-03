@@ -25,8 +25,8 @@
                                     <action selector="pickAnImageFromCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eTc-TM-j0f"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yG1-4w-qso">
-                                <rect key="frame" x="36" y="842" width="48" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yG1-4w-qso">
+                                <rect key="frame" x="37" y="802" width="48" height="30"/>
                                 <state key="normal" title="Gallery"/>
                                 <connections>
                                     <action selector="pickAnImageFromAlbum:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Q2N-2i-jHp"/>
@@ -50,11 +50,16 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="SgR-oJ-KDp"/>
                                 </connections>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="41m-jb-rmt">
+                                <rect key="frame" x="321" y="74" width="40" height="30"/>
+                                <state key="normal" title="Share"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="iZO-Tc-Uak" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0Ml-nW-ZTy"/>
                             <constraint firstAttribute="bottomMargin" secondItem="yG1-4w-qso" secondAttribute="bottom" constant="30" id="0PF-7Z-APv"/>
+                            <constraint firstItem="vqu-xo-h0Z" firstAttribute="top" secondItem="41m-jb-rmt" secondAttribute="bottom" constant="10" id="1sF-hk-mf7"/>
                             <constraint firstItem="vqu-xo-h0Z" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="70" id="4GO-jH-JQh"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hJX-hd-aAF" secondAttribute="trailing" constant="20" symbolic="YES" id="9Nx-Hu-mfZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="vqu-xo-h0Z" secondAttribute="bottom" constant="70" id="Aqb-bV-FUF"/>
@@ -63,10 +68,12 @@
                             <constraint firstItem="hJX-hd-aAF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="VFI-7H-Kiw"/>
                             <constraint firstItem="hJX-hd-aAF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="WpT-oC-t14"/>
                             <constraint firstItem="yG1-4w-qso" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="37" id="dtq-CP-gYk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="41m-jb-rmt" secondAttribute="trailing" constant="53" id="gCM-25-enS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="yG1-4w-qso" secondAttribute="trailing" symbolic="YES" id="i9B-4X-NY0"/>
                             <constraint firstItem="vqu-xo-h0Z" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="iIX-Pz-jEf"/>
                             <constraint firstItem="iZO-Tc-Uak" firstAttribute="bottom" secondItem="vqu-xo-h0Z" secondAttribute="bottom" constant="-30" id="t9y-pd-DBr"/>
                             <constraint firstItem="vqu-xo-h0Z" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tKl-pi-BXY"/>
+                            <constraint firstItem="41m-jb-rmt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="321" id="vTc-EM-hMY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -74,6 +81,7 @@
                         <outlet property="bottomText" destination="iZO-Tc-Uak" id="b64-kc-kLw"/>
                         <outlet property="cameraButton" destination="hJX-hd-aAF" id="O8L-Vb-KVL"/>
                         <outlet property="imageView" destination="vqu-xo-h0Z" id="iQ9-on-El1"/>
+                        <outlet property="shareButton" destination="41m-jb-rmt" id="b1c-HV-OtT"/>
                         <outlet property="topText" destination="GI9-lc-Z8a" id="A4F-jb-bg2"/>
                     </connections>
                 </viewController>
