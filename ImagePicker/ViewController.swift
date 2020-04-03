@@ -9,12 +9,19 @@
 import UIKit
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate,
-UINavigationControllerDelegate{
+UINavigationControllerDelegate, UITextFieldDelegate{
     
     @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var topText: UITextField!
     @IBOutlet weak var bottomText: UITextField!
+    
+    struct Meme {
+        var topText: String
+        var bottomText: String
+        var originalImage: UIImage
+        var memedImage: UIImage
+    }
     
     let memeTextAttributes: [NSAttributedString.Key: Any] = [
         NSAttributedString.Key.strokeColor: UIColor.black,
@@ -36,8 +43,12 @@ UINavigationControllerDelegate{
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        //Subscribe to Keyboard notifications
         
+        //Setup delegates for textviews
+        self.topText.delegate = self
+        self.bottomText.delegate = self
+        
+        //Subscribe to Keyboard notifications
         subscripbeToKeyboardNotifications()
     }
     
@@ -110,6 +121,29 @@ UINavigationControllerDelegate{
     
     @objc func keyboardWillHide(_ notification: Notification) {
         view.frame.origin.y = 0
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func save() {
+            // Create the meme
+            let meme = Meme(topText: topText.text!, bottomText: bottomText.text!, originalImage: imageView.image!, memedImage: generateMemedImage())
+            
+    }
+    
+    
+    func generateMemedImage() -> UIImage {
+
+        // Render view to an image
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
+        let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+
+        return memedImage
     }
 }
 
