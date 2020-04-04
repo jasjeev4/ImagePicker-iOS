@@ -188,6 +188,8 @@ UINavigationControllerDelegate, UITextFieldDelegate{
                 print("error while sharing: \(shareError.localizedDescription)")
             }
         }
+        
+        // With assistance from: https://www.swiftdevcenter.com/uiactivityviewcontroller-tutorial-by-example/
     }
     
 }
