@@ -66,15 +66,6 @@ UINavigationControllerDelegate, UITextFieldDelegate{
         super.viewWillDisappear(animated)
         unsubscribeFromKeyboardNotifications()
     }
-
-//    @IBAction func pickAnImage(_ sender: Any) {
-//        let imagePicker = UIImagePickerController()
-//
-//        // imagePicker.delegate = imageViewDelegate
-//        present(imagePicker, animated: true, completion: nil)
-//
-//        imagePicker.delegate =  self
-//    }
     
     func imagePickerController(_ picker: UIImagePickerController,
                                         didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -115,6 +106,8 @@ UINavigationControllerDelegate, UITextFieldDelegate{
     }
     
     @objc func keyboardWillShow(_ notification: Notification) {
+        // Move rest of the view to make room for keyboard
+        
         view.frame.origin.y = -getKeyboardHeight(notification)
     }
     
@@ -133,7 +126,7 @@ UINavigationControllerDelegate, UITextFieldDelegate{
     }
     
     func unsubscribeFromKeyboardNotifications() {
-
+        // Called when view will leave screen
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
     }
     
@@ -165,12 +158,11 @@ UINavigationControllerDelegate, UITextFieldDelegate{
         view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
         let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
-
-        // Hide navigation and toolbar
         
+        // Show navigation and toolbar
         toolbar.isHidden = false
         navigationBar.isHidden = false
-        
+
         return memedImage
     }
     
@@ -180,8 +172,7 @@ UINavigationControllerDelegate, UITextFieldDelegate{
         let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
         present(ac, animated: true, completion: nil)
         
-        
-        // With assistance from: https://www.swiftdevcenter.com/uiactivityviewcontroller-tutorial-by-example/
+        // States for share completion
         
         ac.completionWithItemsHandler = { (activityType: UIActivity.ActivityType?, completed:
         Bool, arrayReturnedItems: [Any]?, error: Error?) in
