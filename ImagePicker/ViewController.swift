@@ -15,7 +15,10 @@ UINavigationControllerDelegate, UITextFieldDelegate{
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var topText: UITextField!
     @IBOutlet weak var bottomText: UITextField!
-    @IBOutlet weak var shareButton: UIButton!
+    @IBOutlet weak var shareButton: UIBarButtonItem!
+    @IBOutlet weak var navigationBar: UINavigationBar!
+    @IBOutlet weak var toolbar: UIToolbar!
+    
     
     struct Meme {
         var topText: String
@@ -151,6 +154,11 @@ UINavigationControllerDelegate, UITextFieldDelegate{
     
     
     func generateMemedImage() -> UIImage {
+        
+        // Hide navigation and toolbar
+        
+        toolbar.isHidden = true
+        navigationBar.isHidden = true
 
         // Render view to an image
         UIGraphicsBeginImageContext(self.view.frame.size)
@@ -158,6 +166,11 @@ UINavigationControllerDelegate, UITextFieldDelegate{
         let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
 
+        // Hide navigation and toolbar
+        
+        toolbar.isHidden = false
+        navigationBar.isHidden = false
+        
         return memedImage
     }
     
