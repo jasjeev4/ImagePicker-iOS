@@ -83,20 +83,21 @@ UINavigationControllerDelegate, UITextFieldDelegate{
     // MARK: Image Pickers
     
     @IBAction func pickAnImageFromCamera(_ sender: Any) {
-
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        present(imagePicker, animated: true, completion: nil)
+        getImage(.camera)
     }
     
     @IBAction func pickAnImageFromAlbum(_ sender: Any) {
 
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = .photoLibrary
-        present(imagePicker, animated: true, completion: nil)
+         getImage(.photoLibrary)
     }
     
+    
+    func getImage(_ source: UIImagePickerController.SourceType) {
+            let pickerController = UIImagePickerController()
+            pickerController.delegate = self
+            pickerController.sourceType = source
+            present(pickerController, animated: true, completion: nil)
+    }
     
     @IBAction func onTopEditBegin(_ sender: Any) {
         topText.text = ""
