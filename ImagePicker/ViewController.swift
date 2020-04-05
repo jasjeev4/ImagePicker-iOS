@@ -18,6 +18,7 @@ UINavigationControllerDelegate, UITextFieldDelegate{
     @IBOutlet weak var shareButton: UIBarButtonItem!
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var toolbar: UIToolbar!
+    @IBOutlet weak var topTextField: UITextField!
     
     
     struct Meme {
@@ -106,9 +107,13 @@ UINavigationControllerDelegate, UITextFieldDelegate{
     }
     
     @objc func keyboardWillShow(_ notification: Notification) {
-        // Move rest of the view to make room for keyboard
+        // Execute the following only if the lower textfield is selected
+        if(!topText.isEditing) {
         
-        view.frame.origin.y = -getKeyboardHeight(notification)
+            // Move rest of the view to make room for keyboard
+            
+            view.frame.origin.y = -getKeyboardHeight(notification)
+        }
     }
     
     func getKeyboardHeight(_ notification: Notification) -> CGFloat {

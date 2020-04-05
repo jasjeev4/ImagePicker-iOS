@@ -100,6 +100,7 @@
                         <outlet property="shareButton" destination="AAg-a8-c1y" id="o4l-MB-laZ"/>
                         <outlet property="toolbar" destination="fLn-wS-F3o" id="XGG-Z8-pfh"/>
                         <outlet property="topText" destination="GI9-lc-Z8a" id="A4F-jb-bg2"/>
+                        <outlet property="topTextField" destination="GI9-lc-Z8a" id="Fad-kB-3ha"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
