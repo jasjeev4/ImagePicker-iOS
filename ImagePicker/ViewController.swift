@@ -32,7 +32,7 @@ UINavigationControllerDelegate, UITextFieldDelegate{
         NSAttributedString.Key.strokeColor: UIColor.black,
         NSAttributedString.Key.foregroundColor: UIColor.white /* TODO: fill in appropriate UIColor */,
         NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-        NSAttributedString.Key.strokeWidth:  2.5/* TODO: fill in appropriate Float */
+        NSAttributedString.Key.strokeWidth:  -1.0/* TODO: fill in appropriate Float */
     ]
     
     override func viewDidLoad() {
